@@ -8,8 +8,8 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = blog.new(blog_params)
-    if blog.save
+    @blog = Blog.new(blog_params)
+    if @blog.save
       redirect_to blogs_path
     else
       render 'new'
