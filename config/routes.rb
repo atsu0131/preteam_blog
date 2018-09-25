@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-<<<<<<< HEAD
+
 
   get 'blogs/:id' => 'blogs#index'
+
+  resources :blogs
+  resources :users
+
 end
