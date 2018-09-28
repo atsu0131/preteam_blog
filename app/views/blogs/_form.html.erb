@@ -1,0 +1,23 @@
+<%= form_with(model: @blog, local: true, url:choose_new_or_edit) do |form| %>
+  <% if @blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><span class="error-count"><%= @blog.errors.count %>つ</span>ルールを破りました。</h2>
+      <ul>
+        <% @bog.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="title-form">
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+  <div class="content-form">
+    <%= form.label :content %><br>
+    <%= form.text_area :content %>
+  </div>
+  <div class="btn-form">
+  <%= form.submit "登録", class: "btn btn-info btn-lg" %>
+  </div>
+<% end %>
